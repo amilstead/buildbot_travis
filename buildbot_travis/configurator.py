@@ -63,6 +63,9 @@ class TravisConfigurator(object):
         config['codebaseGenerator'] = lambda chdict: chdict['project']
         self.config['title'] = os.environ.get(
             'buildbotTitle', "buildbot travis")
+        self.config['titleURL'] = os.environ.get(
+            'buildbotTitleURL', '#'
+        )
 
     def add_password(self, scheme, netloc, username, password):
         self.passwords[(scheme, netloc)] = (username, password)
